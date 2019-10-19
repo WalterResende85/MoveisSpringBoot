@@ -14,5 +14,13 @@ public class IndexController {
 	public String listaCliente() {
 		return "listaCliente";
 	}
+	@RequestMapping("/listaFuncionario")
+	public String listaFuncionario() {
+		return "listaFuncionario";
+	}
+	@RequestMapping("/listaFornecedor")
+	public String listaFornecedor() {
+		return "listaFornecedor";
+	}
 	
 }
