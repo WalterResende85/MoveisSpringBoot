@@ -2,6 +2,7 @@ package com.app.moveis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,12 @@ public class ClienteController {
 	@RequestMapping(value="/cadastroCliente", method = RequestMethod.POST)
 	public void cadastrarCliente(Cliente cliente) {
 		cr.save(cliente);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public void deletaCliente(@PathVariable(value="id") long id) {
+		Cliente cliente = cr.findById(id);
+		cr.delete(cliente);
 	}
 	
 	@GetMapping("/{acao}/{id}")

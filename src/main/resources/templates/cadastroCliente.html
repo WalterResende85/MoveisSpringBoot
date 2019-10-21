@@ -13,7 +13,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <body>
     <h1 th:text="${acao}"></h1>
         
-    <form method="POST" th:action="@{/${acao}}" th:object="${cliente}">
+    <form method="POST" action ="#" th:action="@{/${acao}}" th:object="${cliente}">
         <table>
             <tr><td></td><td><input type="hidden" name="id" value="${cliente.id}"></td></tr>
             <tr><td>RG</td><td><input type="text" name="rg" th:value="${cliente.rg}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
