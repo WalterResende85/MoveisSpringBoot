@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.app.moveis.model.Cliente;
 
 public interface ClienteRepository extends CrudRepository<Cliente, String>{
-
+public Cliente findById(long id);
 }

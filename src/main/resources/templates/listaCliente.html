@@ -7,18 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
-<body>
-  <div class="row">
+<body  class="brown darken-2">
+    <nav class="nav-extended green darken-3">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">Sistema de Móveis</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="/"><i class="large material-icons">home</i></a></li>
+          </ul>
+        </div>
+        <div class="nav-content center">
+            <ul class="tabs tabs-transparent">
+              <li class="tab"><a href="/listaCliente">Cliente</a></li>
+              <li class="tab disabled"><a href="#test3">Ferramenta</a></li>
+              <li class="tab"><a href="/listaFornecedor">Fornecedor</a></li>
+              <li class="tab"><a href="listaFuncionario">Funcionário</a></li>
+              <li class="tab disabled"><a href="#test3">Material</a></li>
+              <li class="tab disabled"><a href="#test3">Movel</a></li>
+              <li class="tab disabled"><a href="#test3">Pedido</a></li>
+            </ul>
+          </div>
+      </nav>
+  <div class="row container">
     <div class="col s6">
-      <a href="/cadastroCliente">Cadastrar Clientes</a></br>
-      <a href="/">Tela inicial</a>
+        <a href="/cadastroCliente" class="waves-effect waves-light btn-large" style="margin: 30px;"><i class="material-icons right">add_circle</i>Novo Cliente</a>
     </div>
     <div class="col s6">
-      <table>
+      <table class="green lighten-4 z-depth-5 striped" style="margin: 30px;">
         <thead>
+          <tr><th colspan="4">Clientes</th></tr>
           <tr>
             <th>Nome</th>
             <th>RG</th>
@@ -32,6 +52,8 @@
             <td><span th:text="${cliente.rg}"></span></td>
             <td><span th:text="${cliente.logradouro}"></span></td>
             <td><span th:text="${cliente.celular}"></span></td>
+            <td><a th:href="@{/delete/{id}(id=${cliente.id})}">Delete</a></td>
+            <td><a th:href="@{/update/{id}(id=${cliente.id})}">Update</a></td>
           </tr>
         </tbody>
       </table>

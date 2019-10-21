@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
-<title>Sistema de Moveis</title>
-<meta charset="UTF-8">
+  <title>Sistema de Moveis</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 </head>
-<body>
-ola spring...<br>
 
-<a href="/manterCliente">Clientes</a><br>
-
-<a href="/listaFuncionario">Funcionarios</a><br>
-
-<a href="/listaFornecedor">Fornecedores</a><br>
-
-<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script type="text/javascript" src="materialize/js/materialize.js"></script>
+<body class="brown darken-2">
+  <nav class="nav-extended green darken-3">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Sistema de Móveis</a>
+      
+    </div>
+    <div class="nav-content center">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a href="/listaCliente">Cliente</a></li>
+          <li class="tab disabled"><a href="#test3">Ferramenta</a></li>
+          <li class="tab"><a href="/listaFornecedor">Fornecedor</a></li>
+          <li class="tab"><a href="listaFuncionario">Funcionário</a></li>
+          <li class="tab disabled"><a href="#test3">Material</a></li>
+          <li class="tab disabled"><a href="#test3">Movel</a></li>
+          <li class="tab disabled"><a href="#test3">Pedido</a></li>
+        </ul>
+      </div>
+  </nav>
+  <div class="row container" style="margin:50px;">
+    <table class="brown lighten-4 z-depth-5">
+      <thead><th>Testando Conhecimentos</th></thead>
+      <tbody>
+        <tr><td>SpringBoot</td><td>CRUD básico para aprender conceito do SpringBoot</td></tr>
+        <tr><td>JPA</td><td>Utilizando Interface extendendo CrudRepository para abstrair acesso ao banco</td></tr>
+        <tr><td>Materialize</td><td>Aplicando materialize para testar aparências</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.js"></script>
 </body>
+
 </html>

@@ -11,24 +11,26 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 </head>
 <body>
-    <form method="POST">
+    <h1 th:text="${acao}"></h1>
+        
+    <form method="POST" th:action="@{/${acao}}" th:object="${cliente}">
         <table>
-            <tr><td></td><td><input type="hidden" name="id" value=""></td></tr>
-            <tr><td>RG</td><td><input type="text" name="rg" value=""></td></tr>
-            <tr><td>Data de Nascimento</td><td><input type="text" name="dataNascimento" value=""></td></tr>
-            <tr><td>Nome </td><td><input type="text" name="nome" value=""></td></tr>
-            <tr><td>E-mail</td><td><input type="text" name="email" value=""></td></tr>
-            <tr><td>CEP</td><td><input type="text" name="cep" value=""></td></tr>
-            <tr><td>Logradouro</td><td><input type="text" name="logradouro" value=""></td></tr>
-            <tr><td>Numero</td><td><input type="text" name="numero" value=""></td></tr>
-            <tr><td>Complemento</td><td><input type="text" name="complemento" value=""></td></tr>
-            <tr><td>Bairro</td><td><input type="text" name="bairro" value=""></td></tr>
-            <tr><td>UF</td><td><input type="text" name="uf" value=""></td></tr>
-            <tr><td>Cidade</td><td><input type="text" name="cidade" value=""></td></tr>
-            <tr><td>Telefone</td><td><input type="text" name="telefone" value=""></td></tr>
-            <tr><td>Celular</td><td><input type="text" name="celular" value=""></td></tr>
+            <tr><td></td><td><input type="hidden" name="id" value="${cliente.id}"></td></tr>
+            <tr><td>RG</td><td><input type="text" name="rg" th:value="${cliente.rg}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Data de Nascimento</td><td><input type="text" name="dataNascimento" th:value="${cliente.dataNascimento}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Nome </td><td><input type="text" name="nome" th:value="${cliente.nome}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>E-mail</td><td><input type="text" name="email" th:value="${cliente.email}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>CEP</td><td><input type="text" name="cep" th:value="${cliente.cep}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Logradouro</td><td><input type="text" name="logradouro" th:value="${cliente.logradouro}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Numero</td><td><input type="text" name="numero" th:value="${cliente.numero}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Complemento</td><td><input type="text" name="complemento" th:value="${cliente.complemento}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Bairro</td><td><input type="text" name="bairro" th:value="${cliente.bairro}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>UF</td><td><input type="text" name="uf" th:value="${cliente.uf}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Cidade</td><td><input type="text" name="cidade" th:value="${cliente.cidade}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Telefone</td><td><input type="text" name="telefone" th:value="${cliente.telefone}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
+            <tr><td>Celular</td><td><input type="text" name="celular" th:value="${cliente.celular}" th:attr="readonly=${acao == 'delete'} ? 'true' : 'false'"></td></tr>
         </table>
-        <button type="submit">salvar</button>
+        <button type="submit">Confirmar</button>
     </form>
     <a href="/listaCliente">Voltar para lista de clientes</a>
     

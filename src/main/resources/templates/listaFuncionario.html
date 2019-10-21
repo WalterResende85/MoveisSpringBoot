@@ -6,19 +6,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link type="text/css" rel="stylesheet"
-	href="materialize/css/materialize.css" media="screen,projection" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-	<h3>Lista de Funcionarios</h3>
-	<br>
-	<a href="/cadastroFuncionario">Cadastrar Funcionario</a>
-	<br>
-	<a href="/">Tela inicial</a>
+<body  class="brown darken-2">
+		<nav class="nav-extended green darken-3">
+				<div class="nav-wrapper">
+				  <a href="#" class="brand-logo center">Sistema de Móveis</a>
+				  <ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="/"><i class="large material-icons">home</i></a></li>
+				  </ul>
+				</div>
+				<div class="nav-content center">
+					<ul class="tabs tabs-transparent">
+					  <li class="tab"><a href="/listaCliente">Cliente</a></li>
+					  <li class="tab disabled"><a href="#test3">Ferramenta</a></li>
+					  <li class="tab"><a href="/listaFornecedor">Fornecedor</a></li>
+					  <li class="tab"><a href="listaFuncionario">Funcionário</a></li>
+					  <li class="tab disabled"><a href="#test3">Material</a></li>
+					  <li class="tab disabled"><a href="#test3">Movel</a></li>
+					  <li class="tab disabled"><a href="#test3">Pedido</a></li>
+					</ul>
+				  </div>
+			  </nav>
+	<div class="row container">
+		<div class="col s6">
+				<a href="/cadastroFuncionario" class="waves-effect waves-light btn-large" style="margin: 30px;"><i class="material-icons right">add_circle</i>Novo Funcionário</a>
+		  
+		</div>
+		<div class="col s6">
+		  <table class="green lighten-4 z-depth-5 striped" style="margin: 30px;">
+			<thead>
+					<tr><th colspan="4">Funcionários</th></tr>
+			  <tr>
+				<th>Nome</th>
+				<th>CPF</th>
+				<th>Logradouro</th>
+				<th>Celular</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr th:each="funcionario : ${funcionarios}">
+				<td><span th:text="${funcionario.nome}"></span></td>
+				<td><span th:text="${funcionario.cpf}"></span></td>
+				<td><span th:text="${funcionario.logradouro}"></span></td>
+				<td><span th:text="${funcionario.celular}"></span></td>
+			  </tr>
+			</tbody>
+		  </table>
 	
+		</div>
+	  </div>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script type="text/javascript" src="materialize/js/materialize.js"></script>
 </body>
