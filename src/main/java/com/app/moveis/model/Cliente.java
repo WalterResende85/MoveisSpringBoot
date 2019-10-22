@@ -13,6 +13,10 @@ public class Cliente extends Pessoa implements Serializable{
 	
 		
 	
+	public Cliente() {
+		super();
+		
+	}
 	public String getRg() {
 		return rg;
 	}

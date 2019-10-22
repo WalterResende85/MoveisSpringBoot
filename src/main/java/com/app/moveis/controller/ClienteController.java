@@ -25,6 +25,7 @@ public class ClienteController {
 	
 	@RequestMapping(value="/cadastroCliente", method = RequestMethod.POST)
 	public void cadastrarCliente(Cliente cliente) {
+		
 		cr.save(cliente);
 	}
 	
@@ -39,7 +40,10 @@ public class ClienteController {
 	public ModelAndView preparaCliente(@PathVariable(value="acao")String acao, @PathVariable(value="id") Long id) {
 		ModelAndView mv = new ModelAndView("cadastroCliente");
 		
-		if(id ==null) {
+		if(id == 0) {
+			Cliente cliente = new Cliente();
+			System.out.print(cliente.getId());
+			mv.addObject(cliente);
 			return mv;
 		}else {
 		Cliente cliente = cr.findById(id);
